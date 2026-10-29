@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>별빛 축제 강당 VIP 명당 찾기 ✦</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Jua&display=swap">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+/* Gemini-esque Cute Pastel & Starlight Theme */
+:root {
+  --bg: #f5f3ff;
+  --bg-grad: linear-gradient(135deg, #f3f0ff 0%, #eef2ff 50%, #fdf2f8 100%);
+  --surface: #ffffff;
+  --surface-soft: #f8f7ff;
+  --floor: #fffdf9;
+  --ink: #272343;
+  --muted: #6b6785;
+  --line: #dcd7f7;
+  --wall: #5b548a;
+  --stage: #4f46e5;
+  --stage-sub: #7c3aed;
+  --accent: #ec4899;
+  --accent-btn: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  --accent-soft: #fce7f3;
+  --star-gold: #f59e0b;
+  --star-gold-soft: #fef3c7;
+  --circle: #4f46e5;
+  --circle-soft: rgba(79, 70, 229, 0.14);
+  --good: #10b981;
+  --good-soft: #d1fae5;
+  --hot: #f43f5e;
+  --hot-soft: #ffe4e6;
+  --far: #cbd5e1;
+  --room: #ede9fe;
+  --f-display: "Jua", "IBM Plex Sans KR", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans KR", "Gowun Dodum", system-ui, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --shadow-card: 0 10px 28px -6px rgba(99, 102, 241, 0.12), 0 4px 12px -2px rgba(236, 72, 153, 0.06);
+  --shadow-btn: 0 3px 0 #cfc8f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #131122;
+    --bg-grad: linear-gradient(135deg, #121020 0%, #19162b 55%, #23162b 100%);
+    --surface: #1e1b33;
+    --surface-soft: #282442;
+    --floor: #231f3a;
+    --ink: #f3f0ff;
+    --muted: #a59fc4;
+    --line: #3a345c;
+    --wall: #9c94c9;
+    --stage: #6366f1;
+    --stage-sub: #9333ea;
+    --accent: #f472b6;
+    --accent-btn: linear-gradient(135deg, #f472b6 0%, #a855f7 100%);
+    --accent-soft: #43203d;
+    --star-gold: #fbbf24;
+    --star-gold-soft: #42331b;
+    --circle: #818cf8;
+    --circle-soft: rgba(129, 140, 248, 0.18);
+    --good: #34d399;
+    --good-soft: #133b32;
+    --hot: #fb7185;
+    --hot-soft: #471c2b;
+    --far: #475569;
+    --room: #2d284d;
+    --shadow-card: 0 12px 30px -6px rgba(0, 0, 0, 0.45);
+    --shadow-btn: 0 3px 0 #110e1f;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #131122;
+  --bg-grad: linear-gradient(135deg, #121020 0%, #19162b 55%, #23162b 100%);
+  --surface: #1e1b33;
+  --surface-soft: #282442;
+  --floor: #231f3a;
+  --ink: #f3f0ff;
+  --muted: #a59fc4;
+  --line: #3a345c;
+  --wall: #9c94c9;
+  --stage: #6366f1;
+  --stage-sub: #9333ea;
+  --accent: #f472b6;
+  --accent-btn: linear-gradient(135deg, #f472b6 0%, #a855f7 100%);
+  --accent-soft: #43203d;
+  --star-gold: #fbbf24;
+  --star-gold-soft: #42331b;
+  --circle: #818cf8;
+  --circle-soft: rgba(129, 140, 248, 0.18);
+  --good: #34d399;
+  --good-soft: #133b32;
+  --hot: #fb7185;
+  --hot-soft: #471c2b;
+  --far: #475569;
+  --room: #2d284d;
+  --shadow-card: 0 12px 30px -6px rgba(0, 0, 0, 0.45);
+  --shadow-btn: 0 3px 0 #110e1f;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  background-image: var(--bg-grad);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 18px 44px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.wrap { max-width: 1200px; margin: 0 auto; display: grid; gap: 18px; }
+
+/* Cute Header */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 22px;
+  padding: 16px 22px;
+  box-shadow: var(--shadow-card);
+}
+.title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(79,70,229,0.14), rgba(236,72,153,0.14));
+  color: var(--circle);
+  margin-bottom: 4px;
+}
+h1 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(24px, 3.4vw, 34px);
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+h1 span {
+  background: linear-gradient(135deg, #4f46e5 0%, #9333ea 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+:root[data-theme="dark"] h1 span {
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+
+.header-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+nav { display: flex; gap: 8px; flex-wrap: wrap; }
+nav button {
+  font: 400 15px var(--f-display);
+  border: 2px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+  padding: 9px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+nav button:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+nav button:active { transform: translateY(1px); }
+nav button[aria-selected="true"] {
+  background: var(--accent-btn);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.35);
+}
+
+.theme-btn {
+  font: 400 14px var(--f-display);
+  border: 2px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+  padding: 9px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: all 0.15s ease;
+}
+.theme-btn:hover { border-color: var(--circle); transform: translateY(-2px); }
+
+/* Main Grid */
+.main { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(320px, 1fr); gap: 18px; align-items: start; }
+@media (max-width: 900px) { .main { grid-template-columns: 1fr; } }
+
+.board {
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 24px;
+  padding: 12px;
+  min-width: 0;
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+svg#map { width: 100%; height: auto; display: block; touch-action: none; user-select: none; cursor: pointer; border-radius: 16px; }
+
+/* Cute Mascot Companion Bar */
+.gemi-buddy {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(79,70,229,0.09) 0%, rgba(236,72,153,0.10) 100%);
+  border: 2px solid var(--line);
+  border-radius: 20px;
+  padding: 12px 15px;
+  box-shadow: var(--shadow-card);
+}
+.gemi-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.15);
+  animation: floaty 3s ease-in-out infinite;
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-3px) rotate(4deg); }
+}
+.gemi-speech { font-size: 13.5px; line-height: 1.5; color: var(--ink); }
+.gemi-name {
+  font-family: var(--f-display);
+  font-size: 13px;
+  color: var(--circle);
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+/* Right Column Container & Panels */
+.right-col { display: grid; gap: 14px; min-width: 0; }
+.panel {
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 24px;
+  padding: 20px;
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+  box-shadow: var(--shadow-card);
+}
+.panel[hidden] { display: none !important; }
+.panel h2 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 23px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.panel p { margin: 0; }
+.muted { color: var(--muted); font-size: 14px; }
+
+/* Readout Boxes */
+.read { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+.read > div {
+  background: var(--surface-soft);
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  padding: 11px 12px;
+  text-align: center;
+}
+.read .k { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .01em; }
+.read .v { font: 600 26px var(--f-mono); font-variant-numeric: tabular-nums; line-height: 1.25; margin-top: 2px; }
+.read .v.accent { color: var(--accent); }
+.read .v.good { color: var(--good); }
+.read .v.circle { color: var(--circle); }
+.read .v.gold { color: var(--star-gold); }
+
+/* Quiz Card */
+.qcard {
+  border: 2px dashed var(--accent);
+  background: var(--surface-soft);
+  border-radius: 18px;
+  padding: 14px 16px;
+  display: grid;
+  gap: 9px;
+}
+.qk { font-family: var(--f-display); font-size: 13px; color: var(--accent); letter-spacing: .03em; }
+.qt { font-weight: 700; font-size: 14.5px; color: var(--ink); }
+.qf { font-size: 13.5px; font-weight: 600; min-height: 1.4em; }
+.qf.ok { color: var(--good); }
+.qf.no { color: var(--hot); }
+
+/* Cute Tactile Buttons */
+.btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn {
+  font: 600 13.5px var(--f-body);
+  border: 2px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  padding: 8px 13px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn);
+  transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.btn:active:not(:disabled) { transform: translateY(1px); }
+.btn.on {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--ink);
+}
+.btn.green-on {
+  background: var(--good-soft);
+  border-color: var(--good);
+  color: var(--ink);
+}
+.btn.blue-on {
+  background: var(--circle-soft);
+  border-color: var(--circle);
+  color: var(--ink);
+}
+.btn.warn-btn {
+  background: var(--hot-soft);
+  border-color: var(--hot);
+  color: var(--hot);
+  font-weight: 700;
+}
+.btn.primary {
+  background: var(--accent-btn);
+  border-color: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
+button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--circle); outline-offset: 2px; }
+
+/* Mission Box */
+.mission {
+  margin: 0;
+  padding: 12px 14px 12px 30px;
+  background: var(--surface-soft);
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  display: grid;
+  gap: 6px;
+  font-size: 13.8px;
+  list-style-type: decimal;
+}
+.mission li::marker { font-weight: 700; color: var(--circle); }
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.badge.good { background: var(--good-soft); color: var(--good); }
+.badge.hot { background: var(--hot-soft); color: var(--hot); }
+.badge.far { background: color-mix(in srgb, var(--muted) 16%, transparent); color: var(--muted); }
+.badge.gold { background: var(--star-gold-soft); color: var(--star-gold); }
+
+/* Sliders */
+.slider {
+  display: grid;
+  gap: 5px;
+  background: var(--surface-soft);
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  padding: 10px 14px;
+}
+.slider label { display: flex; justify-content: space-between; align-items: center; font-size: 13px; gap: 8px; }
+.slider output { font: 600 15px var(--f-mono); color: var(--accent); flex-shrink: 0; }
+input[type=range] { width: 100%; accent-color: var(--accent); cursor: pointer; }
+
+/* Live VIP Ticket Card */
+.ticket-card {
+  background: linear-gradient(135deg, var(--surface-soft) 0%, var(--star-gold-soft) 100%);
+  border: 2px solid var(--star-gold);
+  border-radius: 20px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  position: relative;
+  box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.18);
+}
+.ticket-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px dashed var(--star-gold);
+  padding-bottom: 8px;
+}
+.ticket-title {
+  font-family: var(--f-display);
+  font-size: 17px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.ticket-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 7px 9px;
+  text-align: center;
+}
+.ticket-item .tk { font-size: 11px; color: var(--muted); font-weight: 600; }
+.ticket-item .tv { font: 700 14px var(--f-body); color: var(--ink); margin-top: 2px; }
+.ticket-inputs { display: grid; gap: 8px; }
+.ticket-inputs input, .ticket-inputs textarea {
+  width: 100%;
+  font: 13.5px/1.5 var(--f-body);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 11px;
+}
+
+.legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12.5px; color: var(--muted); }
+.legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
+
+/* SVG Elements */
+.floor { fill: var(--floor); stroke: var(--wall); stroke-width: 3.5; stroke-linejoin: round; }
+.room { fill: var(--room); stroke: var(--wall); stroke-width: 2.5; stroke-linejoin: round; }
+.stage { fill: url(#stageGrad); stroke: var(--wall); stroke-width: 1.5; }
+.stage-t { fill: #ffffff; font: 16px var(--f-display); letter-spacing: 0.06em; }
+.lbl { fill: var(--ink); font: 700 13px var(--f-body); }
+.lbl-s { fill: var(--muted); font: 600 11.5px var(--f-body); }
+.row-lbl { fill: var(--muted); font: 700 10px var(--f-mono); opacity: 0.7; }
+.num-a { fill: var(--accent); font: 700 13px var(--f-mono); paint-order: stroke; stroke: var(--floor); stroke-width: 3.5px; }
+.num-g { fill: var(--good); font: 700 12px var(--f-mono); paint-order: stroke; stroke: var(--floor); stroke-width: 3.5px; }
+.num-b { fill: var(--circle); font: 700 12.5px var(--f-mono); paint-order: stroke; stroke: var(--floor); stroke-width: 3.5px; }
+
+.seat { fill: var(--surface); stroke: var(--line); stroke-width: 1.2; transition: fill 0.15s ease, transform 0.15s ease; }
+.seat:hover { stroke: var(--accent); stroke-width: 2; }
+.seat.green-row { fill: var(--good-soft); stroke: var(--good); stroke-width: 1.8; }
+.seat.vip { fill: var(--star-gold); stroke: #d97706; stroke-width: 1.5; }
+.seat.near { fill: var(--hot-soft); stroke: var(--hot); stroke-width: 1; opacity: 0.85; }
+.seat.far { fill: var(--far); stroke: none; opacity: 0.5; }
+.seat.front-danger { fill: var(--hot); stroke: #be123c; stroke-width: 1.5; }
+.seat.selected-seat { stroke: var(--accent); stroke-width: 3; }
+
+.rail-straight { stroke: var(--good); stroke-width: 8; stroke-linecap: round; opacity: 0.35; }
+.rail-straight-core { stroke: var(--good); stroke-width: 3; stroke-dasharray: 6 4; stroke-linecap: round; }
+.rail-circle-glow { fill: none; stroke: var(--circle); stroke-width: 10; opacity: 0.22; stroke-linecap: round; }
+.rail-circle { fill: none; stroke: var(--circle); stroke-width: 3.5; stroke-linecap: round; }
+.circ-bound { fill: none; stroke: var(--circle); stroke-width: 2.5; }
+
+.ray { stroke: var(--accent); stroke-width: 2.4; stroke-linecap: round; fill: none; }
+.ray-b { stroke: var(--circle); stroke-width: 2.2; stroke-dasharray: 5 4; stroke-linecap: round; fill: none; }
+.wedge { fill: color-mix(in srgb, var(--accent) 28%, transparent); stroke: var(--accent); stroke-width: 1.8; }
+.wedge-b { fill: var(--circle-soft); stroke: var(--circle); stroke-width: 1.8; }
+.ptP { fill: var(--accent); stroke: #ffffff; stroke-width: 2.8; filter: drop-shadow(0 2px 6px rgba(236,72,153,0.5)); }
+.ptO { fill: var(--star-gold); stroke: #ffffff; stroke-width: 2.5; filter: drop-shadow(0 2px 6px rgba(245,158,11,0.5)); }
+.ptK { fill: var(--ink); }
+.vipfill { fill: var(--star-gold); opacity: 0.22; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="title-badge">✦ GEMINI MATH PLAYGROUND · 원주각과 시야각</div>
+      <h1>별빛 축제 강당 <span>VIP 명당 찾기</span> ✨</h1>
+      <p class="sub">강당 바닥에 깔린 레일을 따라 움직이며 시야각(원주각)의 비밀을 발견하고 나만의 VIP 티켓을 발권해 봐요!</p>
+    </div>
+    <div class="header-controls">
+      <nav role="tablist" aria-label="탐구 단계">
+        <button id="t1" role="tab" aria-selected="true" data-tab="1">① 📏 직선 레일의 비밀</button>
+        <button id="t2" role="tab" aria-selected="false" data-tab="2">② 🌈 둥근 레일의 마법</button>
+        <button id="t3" role="tab" aria-selected="false" data-tab="3">③ 🎟️ 나만의 VIP 티켓</button>
+      </nav>
+      <button id="bTheme" class="theme-btn" type="button" title="화면 테마 전환">🌙 밤하늘 모드</button>
+    </div>
+  </header>
+
+  <div class="main">
+    <!-- 왼쪽: 강당 도면 보드 -->
+    <div class="board">
+      <svg id="map" viewBox="140 15 520 565" role="img" aria-label="별빛 축제 강당 도면">
+        <defs>
+          <linearGradient id="stageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4f46e5"/>
+            <stop offset="50%" stop-color="#7c3aed"/>
+            <stop offset="100%" stop-color="#ec4899"/>
+          </linearGradient>
+          <radialGradient id="stageGlow" cx="50%" cy="0%" r="70%">
+            <stop offset="0%" stop-color="#f472b6" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+          </radialGradient>
+          <clipPath id="aud"><polygon id="audPoly"></polygon></clipPath>
+          <mask id="vipMask" maskUnits="userSpaceOnUse" x="0" y="0" width="800" height="700">
+            <rect x="0" y="0" width="800" height="700" fill="black"></rect>
+            <circle id="mMin" fill="white"></circle>
+            <circle id="mMax" fill="black"></circle>
+          </mask>
+        </defs>
+        <g id="gBase"></g>
+        <g id="gSeats"></g>
+        <g id="gOver"></g>
+        <g id="gTop"></g>
+      </svg>
+    </div>
+
+    <!-- 오른쪽: 제미 요정 배너 + 3단계 학습 패널 -->
+    <div class="right-col">
+      <!-- 귀여운 제미 요정 가이드 -->
+      <div class="gemi-buddy" aria-live="polite">
+        <div class="gemi-avatar" id="gemiFace">🧚‍♀️</div>
+        <div class="gemi-speech">
+          <span class="gemi-name">✦ 제미 요정의 한마디</span>
+          <div id="gemiText">강당의 <b>초록색 가로 직선 레일</b> 위에서 캐릭터 <b>P</b>를 좌우로 움직여 볼까? 같은 줄에 앉으면 시야각이 모두 같을까?</div>
+        </div>
+      </div>
+
+      <!-- STEP 1: 직선 레일의 비밀 (직관 깨기) -->
+      <section class="panel" id="p1">
+        <h2>① 📏 직선 레일의 비밀 (직관 깨기)</h2>
+        <p class="muted">흔히 공연장에서는 <b>같은 가로줄(직선)</b>에 앉으면 똑같은 등급의 좌석이라고 생각해요. 과연 무대 양 끝 A, B를 바라보는 <b>시야각(∠APB)</b>도 똑같을까요?</p>
+
+        <div class="read">
+          <div>
+            <div class="k">내 캐릭터 P의 시야각</div>
+            <div class="v accent" id="r1a">–</div>
+          </div>
+          <div>
+            <div class="k">정중앙 자리와 비교</div>
+            <div class="v good" id="r1d">–</div>
+          </div>
+        </div>
+
+        <ol class="mission">
+          <li>아래에서 <b>레일을 깔 줄</b>을 골라 보세요. 맨 앞줄도 좋아요!</li>
+          <li>도면의 <b>초록색 직선 레일</b> 위에서 캐릭터 <b>P</b>를 마우스로 끌거나 아래 버튼으로 이동해 보세요.</li>
+          <li>정중앙 자리에서 양옆 끝자리로 갈수록 시야각이 어떻게 변하는지 관찰해 보세요!</li>
+        </ol>
+
+        <div class="btns" id="rowPick" style="align-items:center">
+          <span class="muted" style="font-weight:600">🛤️ 레일 줄 고르기</span>
+          <button class="btn" data-row="0" type="button">A열 (맨 앞)</button>
+          <button class="btn blue-on" data-row="5" type="button">F열 (중간)</button>
+          <button class="btn" data-row="10" type="button">K열 (뒤쪽)</button>
+        </div>
+
+        <div class="btns">
+          <button class="btn green-on" id="bJumpCenter" type="button">🎯 정중앙 자리</button>
+          <button class="btn" id="bJumpMid" type="button">🪑 중간쯤 자리</button>
+          <button class="btn" id="bJumpSide" type="button">📐 끝자리</button>
+        </div>
+
+        <div class="qcard">
+          <div class="qk">✦ 1단계 미니 퀴즈</div>
+          <div class="qt">Q. 같은 가로줄(직선 레일)에 앉은 친구들의 시야각은 어떻게 될까요?</div>
+          <div class="btns">
+            <button class="btn" data-q1="same" type="button">모두 똑같다</button>
+            <button class="btn" data-q1="smaller" type="button">양옆으로 갈수록 작아진다</button>
+          </div>
+          <div class="qf" id="q1f"></div>
+        </div>
+      </section>
+
+      <!-- STEP 2: 둥근 레일의 마법 (원주각의 발견) -->
+      <section class="panel" id="p2" hidden>
+        <h2>② 🌈 둥근 레일의 마법 (원주각의 발견)</h2>
+        <p class="muted">양옆 친구들도 억울하지 않게 <b>어디에 앉든 시야각이 똑같은 마법 라인</b>을 깔았어요! 무대 양 끝 A, B를 지나는 <b>둥근 원형 레일</b> 위를 따라 움직여 보세요.</p>
+
+        <div class="read">
+          <div>
+            <div class="k">원형 레일 위 P의 시야각 (원주각)</div>
+            <div class="v accent" id="r2a">35°</div>
+          </div>
+          <div>
+            <div class="k">💡 조명탑 O의 각도 (중심각)</div>
+            <div class="v circle" id="r2o">꺼짐</div>
+          </div>
+        </div>
+
+        <ol class="mission">
+          <li><b>파란 원형 레일</b> 위에서 캐릭터 <b>P</b>를 정면, 중간, 측면으로 이리저리 옮겨 보세요. 시야각이 변하나요?</li>
+          <li><b>‘💡 조명탑(원의 중심 O) 각도 켜기’</b>를 눌러 원의 중심각(∠AOB)과 내 시야각(∠APB)이 몇 배 차이인지 발견해 보세요!</li>
+        </ol>
+
+        <div class="btns">
+          <button class="btn" data-arc="30" type="button">🔵 30° 원형 레일</button>
+          <button class="btn blue-on" data-arc="35" type="button">🌈 35° 원형 레일 (기본)</button>
+          <button class="btn" data-arc="45" type="button">🟣 45° 원형 레일</button>
+        </div>
+
+        <div class="btns">
+          <button class="btn primary" id="bToggleCenter" type="button">💡 조명탑(원의 중심 O) 각도 켜기</button>
+        </div>
+
+        <div class="qcard">
+          <div class="qk">✦ 2단계 핵심 발견 퀴즈</div>
+          <div class="qt">Q. 한 호(무대 AB)에 대하여 둥근 원 위의 모든 자리에서 바라본 시야각(원주각)은 어떨까요?</div>
+          <div class="btns">
+            <button class="btn" data-q2="const" type="button">어디서나 항상 똑같다</button>
+            <button class="btn" data-q2="diff" type="button">자리마다 계속 달라진다</button>
+          </div>
+          <div class="qf" id="q2f"></div>
+        </div>
+      </section>
+
+      <!-- STEP 3: 나만의 VIP 티켓 발권 -->
+      <section class="panel" id="p3" hidden>
+        <h2>③ 🎟️ 나만의 VIP 명당 & 티켓 발권</h2>
+        <p class="muted">시야각이 무조건 크다고 좋을까요? 너무 가까우면 고개가 아파요! 모둠에서 정한 <b>최적의 시야각 범위(두 원 사이)</b>를 설정하고 나만의 좌석을 골라 티켓을 발권해 보세요.</p>
+
+        <div class="btns">
+          <button class="btn warn-btn" id="bFrontRow" type="button">🚨 맨 앞줄 빨간 좌석 (90°+) 체험해보기</button>
+          <button class="btn" id="bSweetSpot" type="button">👑 추천 VIP 정중앙 명당 가기</button>
+        </div>
+
+        <div class="slider">
+          <label for="sMin">
+            <span><b>🔭 VIP 뒤쪽 경계 (실선 원)</b> · 이보다 작으면 무대가 멀어요</span>
+            <output id="oMin">30°</output>
+          </label>
+          <input type="range" id="sMin" min="15" max="60" step="1" value="30">
+        </div>
+
+        <div class="slider">
+          <label for="sMax">
+            <span><b>👀 VIP 앞쪽 경계 (점선 원)</b> · 이보다 크면 고개가 아파요</span>
+            <output id="oMax">45°</output>
+          </label>
+          <input type="range" id="sMax" min="25" max="90" step="1" value="45">
+        </div>
+
+        <div class="legend">
+          <span><i style="background:var(--star-gold)"></i>👑 황금 VIP 좌석 (<b id="vipCountTxt">0</b>석)</span>
+          <span><i style="background:var(--hot)"></i>맨 앞줄 (목 아픔 주의)</span>
+          <span><i style="background:var(--far)"></i>일반석 (멀거나 가까움)</span>
+        </div>
+
+        <!-- 실시간 VIP 티켓 카드 -->
+        <div class="ticket-card">
+          <div class="ticket-head">
+            <div class="ticket-title">🎟️ STARLIGHT FESTIVAL VIP TICKET</div>
+            <span class="badge gold" id="tBadge">👑 황금 VIP석</span>
+          </div>
+          <div class="ticket-grid">
+            <div class="ticket-item">
+              <div class="tk">선택한 좌석</div>
+              <div class="tv" id="tSeat">–</div>
+            </div>
+            <div class="ticket-item">
+              <div class="tk">내 자리 시야각</div>
+              <div class="tv" id="tAngle" style="color:var(--accent)">–</div>
+            </div>
+            <div class="ticket-item">
+              <div class="tk">VIP 설정 범위</div>
+              <div class="tv" id="tRange">30° ~ 45°</div>
+            </div>
+          </div>
+          <div class="ticket-inputs">
+            <input type="text" id="tName" placeholder="학번과 이름을 적어주세요 (예: 30101 김제미)">
+            <textarea id="tReason" rows="2" placeholder="내가 이 좌석을 명당으로 고른 수학적/현실적 이유를 적어보세요! (예: 시야각이 37°라 한눈에 무대가 들어오고 정면이라 목이 편해요!)"></textarea>
+          </div>
+          <div class="btns" style="align-items:center; justify-content:space-between;">
+            <button class="btn primary" id="bCopyTicket" type="button">🎟️ 내 VIP 티켓 복사하기</button>
+            <span class="qf ok" id="copyToast" style="min-height:0"></span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+const NS = "http://www.w3.org/2000/svg";
+const $ = id => document.getElementById(id);
+const rad = d => d * Math.PI / 180, deg = r => r * 180 / Math.PI;
+const fmt = a => Math.round(a) + "°";
+
+// ---- 제미 요정 멘트 도우미 ----
+function sayGemi(face, html) {
+  $("gemiFace").textContent = face;
+  $("gemiText").innerHTML = html;
+}
+
+// ---- 강당 기하 설정 ----
+const A = {x:320, y:80}, B = {x:480, y:80};
+const O0 = {x:400, y:80 + 80*Math.sqrt(3)}, R0 = 160;
+const onC = phi => ({x:O0.x + R0*Math.cos(rad(phi)), y:O0.y + R0*Math.sin(rad(phi))});
+const C = onC(0), D = onC(35);
+const wallAt = y => ({x: C.x + (y - C.y)/(D.y - C.y)*(D.x - C.x), y});
+const W1 = wallAt(170), W2 = wallAt(360);
+const HALL = [[160,30],[640,30],[640,170],[W1.x,170],[W2.x,360],[640,360],[640,560],[160,560]];
+const AUD  = [[160,82],[640,82],...HALL.slice(2)];
+const ROOM = [[640,170],[W1.x,170],[W2.x,360],[640,360]];
+const ptsAttr = P => P.map(p => p.join(",")).join(" ");
+$("audPoly").setAttribute("points", ptsAttr(AUD));
+
+function inPoly(p, poly) {
+  let inside = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const [xi, yi] = poly[i], [xj, yj] = poly[j];
+    if ((yi > p.y) !== (yj > p.y) && p.x < (xj - xi)*(p.y - yi)/(yj - yi) + xi) inside = !inside;
+  }
+  return inside;
+}
+const inAud = p => p.y > 95 && inPoly(p, AUD);
+
+// 점 P에서 무대 AB를 바라보는 시야각(∠APB) 계산
+function ang(P) {
+  const ax = A.x-P.x, ay = A.y-P.y, bx = B.x-P.x, by = B.y-P.y;
+  return deg(Math.atan2(Math.abs(ax*by - ay*bx), ax*bx + ay*by));
+}
+
+// 무대 AB(길이 160)를 원주각 t로 바라보는 원의 중심과 반지름
+function circFor(t) {
+  const r = 80 / Math.sin(rad(t));
+  return {x:400, y:80 + 80/Math.tan(rad(t)), r};
+}
+
+// ---- SVG 생성 도우미 ----
+function el(tag, attrs, parent, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (text != null) e.textContent = text;
+  if (parent) parent.appendChild(e);
+  return e;
+}
+const clear = g => { while (g.firstChild) g.removeChild(g.firstChild); };
+function line(g, P, Q, cls, extra = {}) { return el("line", {x1:P.x, y1:P.y, x2:Q.x, y2:Q.y, class:cls, ...extra}, g); }
+function dot(g, P, r, cls) { return el("circle", {cx:P.x, cy:P.y, r, class:cls}, g); }
+function label(g, P, t, dx = 0, dy = -10, cls = "lbl") { return el("text", {x:P.x+dx, y:P.y+dy, "text-anchor":"middle", class:cls}, g, t); }
+
+function angleMark(g, P, Q1, Q2, r, cls, labelTxt, lcls) {
+  const a1 = Math.atan2(Q1.y-P.y, Q1.x-P.x), a2 = Math.atan2(Q2.y-P.y, Q2.x-P.x);
+  let d = a2 - a1; while (d > Math.PI) d -= 2*Math.PI; while (d < -Math.PI) d += 2*Math.PI;
+  const s = {x:P.x + r*Math.cos(a1), y:P.y + r*Math.sin(a1)}, e = {x:P.x + r*Math.cos(a1+d), y:P.y + r*Math.sin(a1+d)};
+  el("path", {d:`M${P.x},${P.y} L${s.x},${s.y} A${r},${r} 0 0 ${d > 0 ? 1 : 0} ${e.x},${e.y} Z`, class:cls}, g);
+  if (labelTxt) {
+    const m = a1 + d/2, rr = r + 18;
+    el("text", {x:P.x + rr*Math.cos(m), y:P.y + rr*Math.sin(m) + 4, "text-anchor":"middle", class:lcls || "num-a"}, g, labelTxt);
+  }
+}
+
+// 귀여운 내 위치 P 캐릭터 토큰
+function drawCuteP(g, P, tagText = "P") {
+  el("circle", {cx:P.x, cy:P.y, r:13, fill:"var(--accent)", opacity:".22"}, g);
+  dot(g, P, 9, "ptP");
+  el("circle", {cx:P.x-2.8, cy:P.y-1.2, r:1.3, fill:"#fff"}, g);
+  el("circle", {cx:P.x+2.8, cy:P.y-1.2, r:1.3, fill:"#fff"}, g);
+  el("path", {d:`M${P.x-2.4},${P.y+2} Q${P.x},${P.y+4.4} ${P.x+2.4},${P.y+2}`, stroke:"#fff", "stroke-width":"1.4", fill:"none", "stroke-linecap":"round"}, g);
+  label(g, P, tagText, 0, 22);
+}
+
+// 귀여운 조명탑 O (원의 중심) 아이콘
+function drawTowerO(g, O) {
+  el("circle", {cx:O.x, cy:O.y, r:13, fill:"var(--star-gold)", opacity:".25"}, g);
+  dot(g, O, 7.5, "ptO");
+  label(g, O, "💡조명탑 O", 0, 21, "num-b");
+}
+
+// ---- 좌석 배치 생성 (A열 ~ P열) ----
+const ROWS = [], SEATS = [];
+const ROW_NAMES = "ABCDEFGHIJKLMNOP";
+// y=132 (A열: 무대 코앞 약 76°~90°), y=160 (B열: 정중앙이 정확히 45°인 초록 직선 레일!)
+for (let i = 0; i < 15; i++) {
+  ROWS.push({ y: 132 + i * 28, name: ROW_NAMES[i] });
+}
+for (const r of ROWS) {
+  let colNum = 1;
+  for (let x = 184; x <= 616; x += 28) {
+    const p = {x, y: r.y};
+    const ok = [[-8,-6],[8,-6],[-8,6],[8,6]].every(([dx,dy]) => inAud({x:x+dx, y:r.y+dy}));
+    if (ok) {
+      SEATS.push({
+        x, y: r.y,
+        rowName: r.name,
+        colNum: colNum++,
+        label: `${r.name}열 ${colNum - 1}번`,
+        a: ang(p)
+      });
+    }
+  }
+}
+
+// ---- 1단계 초록 레일: 정중앙 시야각이 약 45°인 F열 ----
+let RAIL, RAIL_MIN, RAIL_MAX, X_SIDE, X_MID, D_CENTER, D_MID, D_SIDE;
+const X_CENTER = 400;
+function computeRail(i) {
+  RAIL = ROWS[i];
+  const railSeats = SEATS.filter(s => s.y === RAIL.y);
+  RAIL_MIN = Math.min(...railSeats.map(s => s.x)); RAIL_MAX = Math.max(...railSeats.map(s => s.x));
+  const nearestX = x => railSeats.reduce((b, s) => Math.abs(s.x - x) < Math.abs(b - x) ? s.x : b, railSeats[0].x);
+  X_SIDE = RAIL_MIN; X_MID = nearestX((400 + RAIL_MIN) / 2);
+  const degAt = x => Math.round(ang({x, y: RAIL.y}));
+  D_CENTER = degAt(X_CENTER); D_MID = degAt(X_MID); D_SIDE = degAt(X_SIDE);
+}
+computeRail(5);
+// 3단계 추천 명당: 정중앙 뒤쪽, 시야각 약 36°인 좌석
+const SWEET = SEATS.reduce((b, s) => Math.hypot(s.x-400, s.y-328) < Math.hypot(b.x-400, b.y-328) ? s : b, SEATS[0]);
+
+// ---- 바탕(강당) 그리기 ----
+const gBase = $("gBase"), gSeats = $("gSeats"), gOver = $("gOver"), gTop = $("gTop");
+function drawBase() {
+  clear(gBase);
+  el("polygon", {points:ptsAttr(HALL), class:"floor"}, gBase);
+  el("ellipse", {cx:400, cy:85, rx:155, ry:68, fill:"url(#stageGlow)"}, gBase);
+  el("polygon", {points:ptsAttr(ROOM), class:"room"}, gBase);
+  el("text", {x:600, y:268, "text-anchor":"middle", class:"lbl-s"}, gBase, "🎧 방송실");
+  el("rect", {x:A.x, y:32, width:B.x-A.x, height:48, rx:10, class:"stage"}, gBase);
+  for (const sx of [342, 370, 430, 458]) {
+    el("circle", {cx:sx, cy:43, r:1.8, fill:"#fde68a", opacity:".85"}, gBase);
+  }
+  el("text", {x:400, y:64, "text-anchor":"middle", class:"stage-t"}, gBase, "✦ STAGE 무대 ✦");
+  dot(gBase, A, 4.5, "ptK"); dot(gBase, B, 4.5, "ptK");
+  label(gBase, A, "A", -11, 18); label(gBase, B, "B", 11, 18);
+
+  // 좌측 열 이름 표시
+  for (const r of ROWS) {
+    el("text", {x:169, y:r.y+4, "text-anchor":"middle", class:"row-lbl"}, gBase, r.name);
+  }
+  el("text", {x:400, y:573, "text-anchor":"middle", class:"lbl-s"}, gBase, "✨ 강당 뒤쪽 출입구 ✨");
+}
+
+function seatRect(s, cls) {
+  return el("rect", {x:s.x-8.5, y:s.y-6, width:17, height:12, rx:4.5, class:"seat " + cls}, gSeats);
+}
+
+// ---- 각 단계별 상태 ----
+let tab = 1;
+// 1단계: y=160 (B열) 가로 직선 레일 위에서 x만 이동 (184 ~ 616)
+const st1 = { x: 400, y: RAIL.y };
+// 2단계: 원주각 targetAngle(30, 35, 45)인 원 위에서 각도 phi로 이동, showCenter(조명탑 O 표시 여부)
+const st2 = { targetAngle: 35, phi: 90, showCenter: false };
+// 3단계: VIP 범위(tmin, tmax) 및 선택된 위치 P / 좌석
+const st3 = { tmin: 30, tmax: 45, P: {x: SWEET.x, y: SWEET.y}, seatLabel: SWEET.label };
+
+// 가장 가까운 좌석 찾기 도우미
+function findNearestSeat(p, maxDist = 22) {
+  let best = null, bd = maxDist;
+  for (const s of SEATS) {
+    const d = Math.hypot(s.x - p.x, s.y - p.y);
+    if (d < bd) { bd = d; best = s; }
+  }
+  return best;
+}
+
+// ---- STEP 1 렌더링: 초록 직선 레일 ----
+function render1() {
+  drawBase(); clear(gSeats); clear(gOver); clear(gTop);
+  const railY = st1.y;
+
+  // 좌석 그리기 (B열만 초록색 하이라이트)
+  for (const s of SEATS) {
+    const isRailRow = Math.abs(s.y - railY) < 2;
+    seatRect(s, isRailRow ? "green-row" : "");
+  }
+
+  // 초록색 가로 직선 레일 표시
+  line(gOver, {x:RAIL_MIN-6, y:railY}, {x:RAIL_MAX+6, y:railY}, "rail-straight");
+  line(gOver, {x:RAIL_MIN-6, y:railY}, {x:RAIL_MAX+6, y:railY}, "rail-straight-core");
+  el("text", {x:RAIL_MIN+40, y:railY-12, class:"num-g"}, gOver, `📏 ${RAIL.name}열 초록 직선 레일`);
+
+  // 주요 비교 지점(양끝/정중앙) 작은 가이드 표시
+  for (const gx of [RAIL_MIN, X_CENTER, RAIL_MAX]) {
+    const ga = Math.round(ang({x:gx, y:railY}));
+    el("circle", {cx:gx, cy:railY, r:3.5, fill:"var(--good)"}, gOver);
+    el("text", {x:gx, y:railY+19, "text-anchor":"middle", class:"lbl-s"}, gOver, `${ga}°`);
+  }
+
+  // 현재 내 캐릭터 P와 시야각
+  const P = {x: st1.x, y: railY};
+  const a = ang(P);
+  line(gTop, P, A, "ray");
+  line(gTop, P, B, "ray");
+  angleMark(gTop, P, A, B, 32, "wedge", fmt(a));
+  drawCuteP(gTop, P);
+
+  // 우측 패널 수치 업데이트
+  const degVal = Math.round(a);
+  const diff = D_CENTER - degVal;
+  $("r1a").textContent = degVal + "°";
+  if (diff <= 0) {
+    $("r1d").textContent = "정중앙! (차이 0°)";
+    $("r1d").className = "v good";
+  } else {
+    $("r1d").textContent = `정중앙보다 ${diff}° 작아요`;
+    $("r1d").className = "v accent";
+  }
+}
+
+// ---- STEP 2 렌더링: 파란 원형 레일 (원주각과 중심각) ----
+function getStep2Point(targetAngle, phiDeg) {
+  const c = circFor(targetAngle);
+  return {
+    x: c.x + c.r * Math.cos(rad(phiDeg)),
+    y: c.y + c.r * Math.sin(rad(phiDeg)),
+    c
+  };
+}
+
+function render2() {
+  drawBase(); clear(gSeats); clear(gOver); clear(gTop);
+  for (const s of SEATS) seatRect(s, "").setAttribute("opacity", "0.45");
+
+  const c = circFor(st2.targetAngle);
+  // 둥근 마법 레일 (원호) 그리기
+  el("circle", {cx:c.x, cy:c.y, r:c.r, class:"rail-circle-glow", "clip-path":"url(#aud)"}, gOver);
+  el("circle", {cx:c.x, cy:c.y, r:c.r, class:"rail-circle", "clip-path":"url(#aud)"}, gOver);
+
+  // 캐릭터 P 위치 계산
+  const P = getStep2Point(st2.targetAngle, st2.phi);
+  const a = ang(P);
+
+  // 조명탑(원의 중심 O) 켜짐 상태일 때 중심각 표시
+  if (st2.showCenter) {
+    const O = {x: c.x, y: c.y};
+    line(gOver, O, A, "ray-b");
+    line(gOver, O, B, "ray-b");
+    angleMark(gOver, O, A, B, 26, "wedge-b", (st2.targetAngle * 2) + "°", "num-b");
+    drawTowerO(gOver, O);
+  }
+
+  // 원주각 ∠APB 표시
+  line(gTop, P, A, "ray");
+  line(gTop, P, B, "ray");
+  angleMark(gTop, P, A, B, 32, "wedge", fmt(a));
+  drawCuteP(gTop, P);
+
+  // 수치 업데이트
+  $("r2a").textContent = fmt(a);
+  $("r2o").textContent = st2.showCenter ? `${st2.targetAngle * 2}° (원주각의 2배!)` : "꺼짐 (버튼 클릭)";
+}
+
+// ---- STEP 3 렌더링: 나만의 VIP 구역 설계 & 티켓 발권 ----
+function render3() {
+  drawBase(); clear(gSeats); clear(gOver); clear(gTop);
+  const {tmin, tmax, P} = st3;
+  const cMin = circFor(tmin), cMax = circFor(tmax);
+
+  // 초승달 모양 VIP 구역 마스킹 색칠
+  $("mMin").setAttribute("cx", cMin.x); $("mMin").setAttribute("cy", cMin.y); $("mMin").setAttribute("r", cMin.r);
+  $("mMax").setAttribute("cx", cMax.x); $("mMax").setAttribute("cy", cMax.y); $("mMax").setAttribute("r", cMax.r);
+  el("rect", {x:140, y:80, width:520, height:500, class:"vipfill", mask:"url(#vipMask)", "clip-path":"url(#aud)"}, gOver);
+
+  // 두 경계 원호 그리기
+  el("circle", {cx:cMin.x, cy:cMin.y, r:cMin.r, class:"circ-bound", "clip-path":"url(#aud)"}, gOver);
+  el("circle", {cx:cMax.x, cy:cMax.y, r:cMax.r, class:"circ-bound", "stroke-dasharray":"6 4", "clip-path":"url(#aud)"}, gOver);
+
+  // 좌석 분류 및 렌더링
+  let vipCount = 0;
+  const nearSeat = findNearestSeat(P, 18);
+  for (const s of SEATS) {
+    let cls = "far";
+    if (s.y === 132 && s.a >= 65) {
+      cls = "front-danger"; // 맨 앞줄 목 아픈 좌석
+    } else if (s.a >= tmin && s.a <= tmax) {
+      cls = "vip";
+      vipCount++;
+    } else if (s.a > tmax) {
+      cls = "near";
+    }
+    if (nearSeat && nearSeat === s) cls += " selected-seat";
+    seatRect(s, cls);
+  }
+  $("vipCountTxt").textContent = vipCount;
+
+  // 내 캐릭터 P와 시야각
+  const a = ang(P);
+  line(gTop, P, A, "ray");
+  line(gTop, P, B, "ray");
+  angleMark(gTop, P, A, B, 30, "wedge", fmt(a));
+  drawCuteP(gTop, P, nearSeat ? nearSeat.label : "P");
+
+  // 실시간 VIP 티켓 업데이트
+  const seatName = nearSeat ? nearSeat.label : "자유석 (바닥)";
+  st3.seatLabel = seatName;
+  const degVal = Math.round(a);
+  $("tSeat").textContent = seatName;
+  $("tAngle").textContent = degVal + "°";
+  $("tRange").textContent = `${tmin}° ~ ${tmax}°`;
+
+  const badge = $("tBadge");
+  if (degVal > tmax) {
+    badge.className = "badge hot";
+    badge.textContent = "🚨 너무 가까움 (목 아픔 주의!)";
+  } else if (degVal < tmin) {
+    badge.className = "badge far";
+    badge.textContent = "🔭 일반석 (무대가 멀어요)";
+  } else {
+    badge.className = "badge gold";
+    badge.textContent = "👑 황금 VIP 명당석!";
+  }
+}
+
+function render() {
+  if (tab === 1) render1();
+  else if (tab === 2) render2();
+  else render3();
+}
+
+// ---- 마우스 / 터치 인터랙션 ----
+const svg = $("map");
+function toSvg(e) {
+  const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
+  const q = p.matrixTransform(svg.getScreenCTM().inverse());
+  return {x:q.x, y:q.y};
+}
+
+let dragging = false;
+function handlePointer(e) {
+  const p = toSvg(e);
+  if (tab === 1) {
+    // 1단계: 초록 직선 레일(x: 184 ~ 616) 위를 따라 좌우 이동
+    st1.x = Math.max(RAIL_MIN, Math.min(RAIL_MAX, p.x));
+    const curDeg = Math.round(ang({x:st1.x, y:st1.y}));
+    if (curDeg >= D_CENTER) {
+      sayGemi("🎯", `여기는 <b>정중앙 자리(${D_CENTER}°)</b>야! 이제 양옆으로 끌어서 시야각이 어떻게 변하는지 확인해 봐!`);
+    } else if (curDeg <= D_SIDE + 4) {
+      sayGemi("😲", `헉! 같은 ${RAIL.name}열 가로줄인데 끝으로 오니까 시야각이 <b>${curDeg}°</b>로 확 줄어들었어!`);
+    }
+    render1();
+  } else if (tab === 2) {
+    // 2단계: 현재 원형 레일 위에서 마우스 방향의 각도(phi)로 스냅 이동
+    const c = circFor(st2.targetAngle);
+    let phi = deg(Math.atan2(p.y - c.y, p.x - c.x));
+    const candidate = getStep2Point(st2.targetAngle, phi);
+    if (inAud(candidate)) {
+      st2.phi = phi;
+      render2();
+    }
+  } else if (tab === 3) {
+    // 3단계: 좌석 클릭 시 좌석 중심으로 스냅, 아니면 자유 이동
+    if (!inAud(p)) return;
+    const seat = findNearestSeat(p, 18);
+    st3.P = seat ? {x: seat.x, y: seat.y} : p;
+    const curA = Math.round(ang(st3.P));
+    if (curA >= 70) {
+      sayGemi("😵‍💫", `으아악! 시야각이 <b>${curA}°</b>야! 무대 왼쪽 끝 A와 오른쪽 끝 B를 번갈아 보려면 목이 너무 아파!`);
+    } else if (curA >= st3.tmin && curA <= st3.tmax) {
+      sayGemi("👑", `오! <b>${seat ? seat.label : "이 자리"}</b>(시야각 ${curA}°)는 두 원호 사이의 <b>황금 VIP 구역</b>에 쏙 들어오네!`);
+    } else if (curA < st3.tmin) {
+      sayGemi("🔭", `시야각이 <b>${curA}°</b>로 조금 작아서 무대가 멀리 보일 수 있어! 원 안쪽으로 조금 더 와볼까?`);
+    }
+    render3();
+  }
+}
+
+svg.addEventListener("pointerdown", e => {
+  dragging = true;
+  try { svg.setPointerCapture(e.pointerId); } catch (_) {}
+  handlePointer(e);
+});
+svg.addEventListener("pointermove", e => { if (dragging) handlePointer(e); });
+const stopDrag = () => { dragging = false; };
+svg.addEventListener("pointerup", stopDrag);
+svg.addEventListener("pointercancel", stopDrag);
+
+// ---- 상단 탭 전환 ----
+document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => {
+  tab = +b.dataset.tab;
+  document.querySelectorAll("nav button").forEach(x => x.setAttribute("aria-selected", x === b));
+  for (const k of [1, 2, 3]) $("p" + k).hidden = k !== tab;
+
+  if (tab === 1) {
+    sayGemi("🧚‍♀️", "강당의 <b>초록색 가로 직선 레일</b> 위에서 캐릭터 <b>P</b>를 좌우로 움직여 볼까? 같은 줄에 앉으면 시야각이 모두 같을까?");
+  } else if (tab === 2) {
+    sayGemi("🌈", "이번엔 <b>파란색 둥근 원형 레일</b> 위를 따라 P를 움직여 봐! 자리를 옮겨도 시야각(원주각)이 어떻게 되는지 관찰해 보자!");
+  } else if (tab === 3) {
+    sayGemi("🎟️", "두 원호 사이의 <b>황금색 VIP 구역</b>에서 가장 마음에 드는 좌석을 골라 클릭하고, 나만의 VIP 티켓을 발권해 봐!");
+  }
+  render();
+}));
+
+// ---- STEP 1 버튼 & 퀴즈 ----
+function setStep1X(xVal, btnId) {
+  st1.x = xVal;
+  ["bJumpCenter", "bJumpMid", "bJumpSide"].forEach(id => $(id).classList.toggle("green-on", id === btnId));
+  render1();
+}
+function labelJumpButtons() {
+  $("bJumpCenter").textContent = `🎯 정중앙 자리 (${D_CENTER}°)`;
+  $("bJumpMid").textContent = `🪑 중간쯤 자리 (${D_MID}°)`;
+  $("bJumpSide").textContent = `📐 끝자리 (${D_SIDE}°)`;
+}
+labelJumpButtons();
+document.querySelectorAll("[data-row]").forEach(btn => btn.addEventListener("click", () => {
+  computeRail(+btn.dataset.row);
+  st1.y = RAIL.y; st1.x = X_CENTER;
+  document.querySelectorAll("[data-row]").forEach(x => x.classList.toggle("blue-on", x === btn));
+  ["bJumpCenter", "bJumpMid", "bJumpSide"].forEach(id => $(id).classList.toggle("green-on", id === "bJumpCenter"));
+  labelJumpButtons();
+  if (D_CENTER > 90) {
+    sayGemi("😵‍💫", `${RAIL.name}열 정중앙은 시야각이 <b>${D_CENTER}°</b>나 돼! 무대 양 끝을 보려면 고개를 많이 돌려야겠는데? 이렇게 크면 정말 좋은 자리일까? <b>③단계</b>에서 확인해 보자! 일단 지금은 양옆으로 끌어 볼까?`);
+  } else {
+    sayGemi("🛤️", `레일을 <b>${RAIL.name}열</b>로 옮겼어! 정중앙은 <b>${D_CENTER}°</b>야. 양옆으로 끌면 어떻게 될까?`);
+  }
+  render1();
+}));
+$("bJumpCenter").addEventListener("click", () => {
+  setStep1X(X_CENTER, "bJumpCenter");
+  sayGemi("🎯", `정중앙 자리의 시야각은 <b>${D_CENTER}°</b>야! 이제 중간이나 끝자리 버튼도 눌러 비교해 봐!`);
+});
+$("bJumpMid").addEventListener("click", () => {
+  setStep1X(X_MID, "bJumpMid");
+  sayGemi("🪑", `중간쯤 자리로 오니까 정중앙(${D_CENTER}°)보다 줄어든 <b>${D_MID}°</b>가 되었어!`);
+});
+$("bJumpSide").addEventListener("click", () => {
+  setStep1X(X_SIDE, "bJumpSide");
+  sayGemi("📐", `끝자리로 오니까 시야각이 <b>${D_SIDE}°</b>까지 작아졌네! 같은 줄인데 끝자리 친구들은 억울하겠어!`);
+});
+
+document.querySelectorAll("[data-q1]").forEach(btn => btn.addEventListener("click", () => {
+  const ans = btn.dataset.q1;
+  const f = $("q1f");
+  if (ans === "smaller") {
+    f.textContent = "🎉 정답이에요! 같은 가로줄(직선)이라도 양옆으로 갈수록 시야각이 작아져요. 그럼 어디에 앉아야 공평할지 ②단계로 가볼까요?";
+    f.className = "qf ok";
+    sayGemi("🥳", "딩동댕! 같은 가로줄이라고 시야각이 같은 게 아니었어! 이제 상단의 <b>② 둥근 레일의 마법</b>을 눌러 봐!");
+  } else {
+    f.textContent = `💡 초록 레일 끝으로 캐릭터 P를 옮겨 보세요! ${D_CENTER}°에서 ${D_SIDE}°로 숫자가 변해요.`;
+    f.className = "qf no";
+    sayGemi("🤔", `어라? <b>📐 끝자리 (${D_SIDE}°)</b> 버튼을 한번 눌러 볼래? 정중앙(${D_CENTER}°)이랑 각도가 같은지 확인해 봐!`);
+  }
+}));
+
+// ---- STEP 2 버튼 & 퀴즈 ----
+document.querySelectorAll("[data-arc]").forEach(btn => btn.addEventListener("click", () => {
+  st2.targetAngle = +btn.dataset.arc;
+  st2.phi = 90; // 정중앙 위쪽으로 초기화
+  document.querySelectorAll("[data-arc]").forEach(x => x.classList.toggle("blue-on", x === btn));
+  sayGemi("🌈", `<b>${st2.targetAngle}° 원형 레일</b>로 바꿨어! 레일을 따라 좌우로 움직이면서 시야각 숫자를 지켜봐!`);
+  render2();
+}));
+
+$("bToggleCenter").addEventListener("click", () => {
+  st2.showCenter = !st2.showCenter;
+  $("bToggleCenter").textContent = st2.showCenter
+    ? "💡 조명탑(원의 중심 O) 각도 끄기"
+    : "💡 조명탑(원의 중심 O) 각도 켜기";
+  if (st2.showCenter) {
+    sayGemi("💡", `짜잔! 원의 중심에 있는 조명탑 O의 각도(중심각)는 <b>${st2.targetAngle * 2}°</b>야! 내 시야각(원주각 <b>${st2.targetAngle}°</b>)의 딱 2배지!`);
+  }
+  render2();
+});
+
+document.querySelectorAll("[data-q2]").forEach(btn => btn.addEventListener("click", () => {
+  const ans = btn.dataset.q2;
+  const f = $("q2f");
+  if (ans === "const") {
+    f.textContent = "🎉 정답! 한 호(무대 AB)에 대한 원주각의 크기는 모두 같고, 중심각 크기의 절반(½)이에요!";
+    f.className = "qf ok";
+    sayGemi("🎊", "완벽해! 원주각의 핵심 성질을 찾았어! 이제 <b>③ 나만의 VIP 티켓</b> 탭으로 가서 내 명당을 골라 보자!");
+  } else {
+    f.textContent = "💡 파란 원형 레일 위에서 캐릭터 P를 움직여 보세요! 시야각 숫자가 변하나요?";
+    f.className = "qf no";
+  }
+}));
+
+// ---- STEP 3 슬라이더, 체험 버튼 & 티켓 복사 ----
+$("bFrontRow").addEventListener("click", () => {
+  st3.P = {x: 400, y: 112};
+  sayGemi("😵‍💫", `으악! 맨 앞줄 정중앙(시야각 <b>${Math.round(ang(st3.P))}°</b>)에 앉았더니 무대 양 끝을 보려고 고개를 좌우로 돌리다 목이 뻐근해! 시야각이 무조건 크다고 좋은 게 아니네!`);
+  render3();
+});
+
+$("bSweetSpot").addEventListener("click", () => {
+  st3.P = {x: SWEET.x, y: SWEET.y}; // 정중앙 뒤쪽 (약 36°)
+  const sa = Math.round(SWEET.a);
+  if (sa >= st3.tmin && sa <= st3.tmax) {
+    sayGemi("👑", `역시 <b>${SWEET.label}</b>(시야각 ${sa}°)처럼 <b>${st3.tmin}°~${st3.tmax}° 원호 사이</b>에 앉으니까 고개를 무리하게 돌리지 않아도 무대가 한눈에 쏙 들어와!`);
+  } else {
+    sayGemi("🤔", `<b>${SWEET.label}</b>의 시야각은 ${sa}°야. 지금 정한 범위(${st3.tmin}°~${st3.tmax}°) 밖이네! 범위를 다시 생각해 볼까?`);
+  }
+  render3();
+});
+
+function syncSliders(src) {
+  let a = +$("sMin").value, b = +$("sMax").value;
+  if (a >= b - 2) {
+    if (src === "min") b = Math.min(90, a + 2);
+    else a = Math.max(15, b - 2);
+  }
+  $("sMin").value = a; $("sMax").value = b;
+  st3.tmin = a; st3.tmax = b;
+  $("oMin").textContent = a + "°"; $("oMax").textContent = b + "°";
+  render3();
+}
+$("sMin").addEventListener("input", () => syncSliders("min"));
+$("sMax").addEventListener("input", () => syncSliders("max"));
+
+$("bCopyTicket").addEventListener("click", () => {
+  const name = $("tName").value.trim() || "익명 관람객";
+  const reason = $("tReason").value.trim() || "(이유 미작성)";
+  const degVal = Math.round(ang(st3.P));
+  const text = [
+    `🎟️ [별빛 축제 강당 VIP 명당 티켓] ✦`,
+    `• 예매자: ${name}`,
+    `• 선택한 좌석: ${st3.seatLabel} (시야각 ${degVal}°)`,
+    `• 설정한 VIP 시야각 범위: ${st3.tmin}° ~ ${st3.tmax}° (두 원호 사이 구역)`,
+    `• 선정 이유: ${reason}`
+  ].join("\n");
+
+  const temp = document.createElement("textarea");
+  temp.value = text;
+  document.body.appendChild(temp);
+  temp.select();
+  try {
+    document.execCommand("copy");
+    $("copyToast").textContent = "✨ 티켓이 복사되었어요!";
+    sayGemi("💌", `<b>${name}</b>의 멋진 VIP 티켓이 클립보드에 복사되었어! 패들릿이나 과제방에 붙여넣어 자랑해 보자!`);
+    setTimeout(() => { $("copyToast").textContent = ""; }, 3000);
+  } catch (_) {}
+  document.body.removeChild(temp);
+});
+
+// ---- 테마 전환 (낮/밤하늘 모드) ----
+function updateThemeBtn() {
+  const root = document.documentElement;
+  const current = root.getAttribute("data-theme");
+  const isDark = current ? current === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  $("bTheme").textContent = isDark ? "☀️ 낮 모드" : "🌙 밤하늘 모드";
+}
+$("bTheme").addEventListener("click", () => {
+  const root = document.documentElement;
+  const current = root.getAttribute("data-theme");
+  const isDark = current ? current === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  root.setAttribute("data-theme", isDark ? "light" : "dark");
+  updateThemeBtn();
+});
+updateThemeBtn();
+
+render();
+})();
+</script>
+</body>
+</html>
